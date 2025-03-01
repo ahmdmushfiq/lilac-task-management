@@ -132,15 +132,3 @@
 
             
     </script>
-
-    
-    @if (session()->has('success'))
-    <script>
-        Swal.fire({
-            icon: 'success',
-            title: 'Task created successfully',
-            showConfirmButton: false,
-            timer: 1500
-        });
-    </script>
-    @endif

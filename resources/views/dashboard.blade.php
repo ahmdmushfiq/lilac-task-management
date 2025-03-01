@@ -114,7 +114,7 @@
     @if (session()->has('success'))
         Swal.fire({
             icon: 'success',
-            title: 'Task Deleted successfully',
+            title: '{{ session('success') }}',
             showConfirmButton: false,
             timer: 1500
         });

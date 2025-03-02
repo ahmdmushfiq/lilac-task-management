@@ -12,7 +12,7 @@ class TaskController extends Controller
 {
     public function taskList(Request $request)
     {
-        $tasks = Task::where('user_id', $request->user_id)->get();
+        $tasks = Task::where('user_id', Auth::user()->id)->get();
         return response()->json([
             'status' => 'success',
             'tasks' => $tasks
@@ -21,7 +21,6 @@ class TaskController extends Controller
 
     public function taskCreate(Request $request)
     {
-        $task = new Task();
         try {
             $task = new Task();
             $task->user_id = Auth::user()->id;
